@@ -62,7 +62,41 @@
     font-size: 0.875rem;
     color: #444;
     margin-top: 8px;
+    height: 32px;
 }
 .Toastify__progress-bar--success {
     background: #f2b63f !important;
+}
+.btn-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.add-to-cart-btn,
+.book-now-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.add-to-cart-btn {
+    background-color: #000;
+    color: white;
+}
+
+.book-now-btn {
+    background-color: #f33;
+    color: white;
+}
+
+.book-now-btn:hover {
+    background-color: #c00;
+}
+.btn-service {
+    display: flex;
+    justify-content: space-between;
 }

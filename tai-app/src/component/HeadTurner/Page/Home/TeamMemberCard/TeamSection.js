@@ -10,7 +10,6 @@ const TeamMemberCard = ({ name, imageUrl, onClick }) => (
         </div>
         <div className="card-overlay">
             <span className="member-name">{name}</span>
-            <button className="add-button">+</button>
         </div>
     </div>
 );
@@ -22,7 +21,9 @@ const TeamSection = () => {
     useEffect(() => {
         const getProduct = async () => {
             try {
-                const res = await fetch("https://6871fc0376a5723aacd3429e.mockapi.io/doingu");
+                const res = await fetch(
+                    "https://6871fc0376a5723aacd3429e.mockapi.io/doingu"
+                );
                 const data = await res.json();
                 setTeamMembers(data);
             } catch (error) {
@@ -32,7 +33,9 @@ const TeamSection = () => {
         getProduct();
     }, []);
 
-    const selectedMember = teamMembers.find((m) => String(m.id) === String(selectedId));
+    const selectedMember = teamMembers.find(
+        (m) => String(m.id) === String(selectedId)
+    );
 
     return (
         <div className="team-section">
@@ -46,21 +49,36 @@ const TeamSection = () => {
 
                 {teamMembers.map((member) => (
                     <Col key={member.id} lg={3} md={4} xs={6}>
-                        <TeamMemberCard name={member.name} imageUrl={member.imageUrl} onClick={() => setSelectedId(member.id)} />
+                        <TeamMemberCard
+                            name={member.name}
+                            imageUrl={member.imageUrl}
+                            onClick={() => setSelectedId(member.id)}
+                        />
                     </Col>
                 ))}
 
                 <Col lg={6} md={4} xs={6}>
-                    <div className={`see-more-card ${selectedMember ? "show" : ""}`}>
+                    <div
+                        className={`see-more-card ${
+                            selectedMember ? "show" : ""
+                        }`}
+                    >
                         {selectedMember ? (
                             <>
                                 <div className="see-more-info">
-                                    <p className="memberName">Hi I'M {selectedMember.name}</p>
-                                    <p className="member-bio">{selectedMember.bio}</p>
+                                    <p className="memberName">
+                                        Hi I'M {selectedMember.name}
+                                    </p>
+                                    <p className="member-bio">
+                                        {selectedMember.bio}
+                                    </p>
                                 </div>
                                 <div className="see-more-icon">
                                     <div className="photo">
-                                        <img src={selectedMember.imageUrl} alt={selectedMember.name} />
+                                        <img
+                                            src={selectedMember.imageUrl}
+                                            alt={selectedMember.name}
+                                        />
                                         <div className="glow-wrap">
                                             <i className="glow"></i>
                                         </div>
@@ -69,8 +87,12 @@ const TeamSection = () => {
                             </>
                         ) : (
                             <div className="click-me">
-                                <p className="memberName">Click a card to see more</p>
-                                <p className="member-bio">Select a team member to view details.</p>
+                                <p className="memberName1">
+                                    Click a card to see more
+                                </p>
+                                <p className="member-bio">
+                                    Select a team member to view details.
+                                </p>
                             </div>
                         )}
                     </div>

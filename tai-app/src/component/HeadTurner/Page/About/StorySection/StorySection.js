@@ -49,9 +49,17 @@ const StorySection = () => {
                     <div className="story-content">
                         <ul className="year-list">
                             {timelineData.map((item, index) => (
-                                <li key={item.year} className={`year-item ${index === selectedIndex ? "active" : ""}`} onClick={() => setSelectedIndex(index)}>
+                                <li
+                                    key={item.year}
+                                    className={`year-item ${
+                                        index === selectedIndex ? "active" : ""
+                                    }`}
+                                    onClick={() => setSelectedIndex(index)}
+                                >
                                     {item.year}
-                                    {index === selectedIndex && <span className="dot"></span>}
+                                    {index === selectedIndex && (
+                                        <span className="dot"></span>
+                                    )}
                                 </li>
                             ))}
                         </ul>
@@ -63,13 +71,21 @@ const StorySection = () => {
                     </div>
                 </div>
                 <div className="story-right">
-                    <div className="since-text">
+                    {/* <div className="since-text">
                         <p>SINCE</p>
                         <strong>1987</strong>
-                    </div>
+                    </div> */}
                     <div className="story-images">
-                        <img src="https://i.pinimg.com/736x/88/a6/ce/88a6ce3b22ee7fd821061f38fccf7b94.jpg" alt="Main" className="main-img" />
-                        <img src="https://theme.hstatic.net/200000893323/1001256440/14/about_us_history_banner_2.jpg?v=1595" alt="Overlay" className="overlay-img" />
+                        <img
+                            src="https://i.pinimg.com/736x/88/a6/ce/88a6ce3b22ee7fd821061f38fccf7b94.jpg"
+                            alt="Main"
+                            className="main-img"
+                        />
+                        <img
+                            src="https://theme.hstatic.net/200000893323/1001256440/14/about_us_history_banner_2.jpg?v=1595"
+                            alt="Overlay"
+                            className="overlay-img"
+                        />
                     </div>
                 </div>
             </div>

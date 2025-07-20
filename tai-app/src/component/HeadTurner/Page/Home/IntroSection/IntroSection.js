@@ -1,8 +1,10 @@
 import React from "react";
 import "./IntroSection.css";
 import ButtonBody from "../../../Button/ButtonBody/ButtonBody";
+import { Link } from "react-router-dom";
 
 const IntroSection = () => {
+    const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
     return (
         <div className="intro-section">
             <div className="item">
@@ -24,10 +26,18 @@ const IntroSection = () => {
                                 HEAD TURNER GIÚP BẠN <br /> TỎA SÁNG
                             </h2>
                             <p className="intro-description">
-                                Chúng tôi có mọi thứ mà bạn thực sự cần: bầu không khí, tinh thần đoàn kết, sự chuyên nghiệp của những người thợ tay nghề cao và duy trì truyền thống cắt tóc, cùng nhu
-                                cà phê hào hứng giúp bạn thoải mái
+                                Chúng tôi có mọi thứ mà bạn thực sự cần: bầu
+                                không khí, tinh thần đoàn kết, sự chuyên nghiệp
+                                của những người thợ tay nghề cao và duy trì
+                                truyền thống cắt tóc, cùng nhu cà phê hào hứng
+                                giúp bạn thoải mái
                             </p>
-                            <button className="intro-button">XEM THÊM</button>
+
+                            <Link to="/about" onClick={scrollToTop}>
+                                <button className="intro-button">
+                                    XEM THÊM
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

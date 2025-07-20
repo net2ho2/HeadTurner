@@ -39,8 +39,11 @@
 
 .header.scrolled .logo {
     color: var(--color-black);
-    font-size: 32px;
+    font-size: 38px;
     border: none;
+}
+.header.scrolled .nav-menu li {
+    font-size: 14px;
 }
 
 .header.scrolled .user-info,
@@ -91,7 +94,6 @@
 .actions {
     display: flex;
     gap: 12px;
-    align-items: center;
 }
 
 .actions i {
@@ -510,6 +512,7 @@
 /* ========== BOOKING POPOVER ========== */
 .book-wrapper {
     position: relative;
+    margin-left: 10px;
 }
 
 .book-popup {
@@ -521,8 +524,15 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
     z-index: 1000;
     display: none;
-    background-color: rgba(0, 0, 0, 0.479);
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 8px;
+}
+.book-popup {
+    color: black;
+}
+.header.scrolled .book-popup {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
 }
 
 .book-wrapper:hover .book-popup {
@@ -595,7 +605,10 @@
     background-color: var(--color-white);
     transition: background-color 0.2s ease;
 }
-
+.suggestion-header {
+    display: flex;
+    width: 80%;
+}
 .search-suggestions1 li:hover {
     background-color: var(--color-bg-light);
 }
@@ -607,6 +620,7 @@
     justify-content: space-between;
     gap: 12.8px;
     flex: 1;
+    margin-left: 5px;
     overflow: hidden;
     text-align: left;
     width: 440px;
@@ -643,7 +657,9 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-
+.left-menu {
+    display: flex;
+}
 /* RIGHT COLUMN */
 .suggestion-price {
     font-weight: 700;
@@ -686,108 +702,6 @@ mark {
     display: table;
     clear: both;
 }
-/* ========== MEDIA QUERIES ========== */
-@media (max-width: 1516px) {
-    .nav-menu {
-        gap: 12px;
-    }
-    .nav-menu li {
-        font-size: 12px;
-    }
-}
-@media (max-width: 1456px) {
-    .nav-menu {
-        gap: 12px;
-    }
-    .nav-menu li {
-        font-size: 14px;
-        padding: 4px;
-    }
-    .header.scrolled .logo {
-        font-size: 18px;
-    }
-}
-@media (max-width: 961px) {
-    .header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 90%;
-        padding: 10px;
-    }
-    .icon-menu {
-        display: block;
-    }
-    .logo {
-        display: none;
-    }
-
-    .logos {
-        display: block;
-        font-size: 24px;
-        font-weight: bold;
-        margin-right: 20%;
-    }
-    .header.scrolled .logos {
-        color: var(--color-black);
-        margin-right: 20%;
-    }
-    .header.scrolled .actions {
-        width: 100%;
-    }
-    .header.scrolled {
-        padding: 20px 20px;
-    }
-    .actions {
-        display: flex;
-        width: 95%;
-        gap: 0px;
-        justify-content: space-between;
-    }
-    .title {
-        font-size: 24px;
-    }
-    .description {
-        font-size: 16px;
-    }
-    .info-bar {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .hero-button {
-        font-size: 14px;
-    }
-    .nav-menu {
-        display: none;
-        position: absolute;
-        top: 110%;
-        width: 100%;
-        gap: 4px;
-        padding: 5px;
-    }
-    .nav-menu-icon.active {
-        display: flex;
-    }
-    .actions {
-        justify-content: center;
-    }
-    .book-button {
-        display: none;
-    }
-    .search-popup,
-    .login .login-toggle {
-        min-width: 300px;
-    }
-}
-
-@media (max-width: 594px) {
-    .logos {
-        font-size: 16px;
-        font-weight: bold;
-        margin-right: 14%;
-    }
-}
-
 /* ========== USER INFO ========== */
 .user-info {
     display: flex;
@@ -831,5 +745,122 @@ mark {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* ========== MEDIA QUERIES ========== */
+@media (max-width: 1516px) {
+    .nav-menu {
+        gap: 12px;
+    }
+    .nav-menu li {
+        font-size: 12px;
+    }
+}
+@media (max-width: 1456px) {
+    .nav-menu {
+        gap: 12px;
+    }
+    .nav-menu li {
+        font-size: 14px;
+        padding: 4px;
+    }
+    .header.scrolled .logo {
+        font-size: 18px;
+    }
+}
+@media (max-width: 961px) {
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+        padding: 10px;
+    }
+
+    .icon-menu {
+        display: block;
+    }
+    .logo {
+        display: none;
+    }
+
+    .logos {
+        display: block;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .header.scrolled .logos {
+        color: var(--color-black);
+        margin-right: 40%;
+    }
+    .header.scrolled .actions {
+        width: 100%;
+    }
+    .header.scrolled {
+        padding: 20px 20px;
+    }
+    .actions {
+        display: flex;
+        width: 95%;
+        gap: 0px;
+        justify-content: space-between;
+    }
+    .title {
+        font-size: 24px;
+    }
+    .description {
+        font-size: 16px;
+    }
+    .info-bar {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .hero-button {
+        font-size: 14px;
+    }
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 110%;
+        width: 100%;
+        gap: 4px;
+        padding: 5px;
+    }
+    .nav-menu-icon.active {
+        display: flex;
+    }
+
+    .book-button {
+        display: none;
+    }
+    .suggestion-left {
+        width: 200px;
+        align-items: center;
+    }
+    .suggestion-right {
+        display: none;
+    }
+    .search-popup {
+        transform: translateX(-50%);
+        width: 350px;
+    }
+    .login .login-toggle {
+        width: 300px;
+        transform: translateX(-65%);
+    }
+}
+
+@media (max-width: 594px) {
+    .logos {
+        font-size: 16px;
+        font-weight: bold;
+        margin-right: 14%;
+    }
+    .search-popup {
+        width: 300px;
+    }
+    .login .login-toggle {
+        width: 300px;
     }
 }

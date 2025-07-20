@@ -20,7 +20,7 @@
     color: var(--color-text-dark);
     min-height: 350px;
     left: -15%;
-    top: 45%;
+    top: 35%;
     transform: translateY(-50%) rotate(180deg);
 }
 
@@ -70,7 +70,9 @@
     gap: 20px;
     position: relative;
 }
-
+.phone {
+    color: var(--color-primary-dark);
+}
 .form-row {
     display: flex;
     flex-direction: column;

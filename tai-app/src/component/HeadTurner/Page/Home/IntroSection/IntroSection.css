@@ -92,7 +92,11 @@
     width: 80px;
     border-bottom: 3px solid var(--color-primary);
 }
-
+.title1 {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
 /* Title */
 .intro-title {
     font-size: 32px;
