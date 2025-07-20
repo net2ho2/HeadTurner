@@ -6,19 +6,9 @@ import { BookingContext } from "../../../Global/ProductContext/BookingContext";
 import "./BookingForm.css";
 
 const BookingForm = () => {
+    // ✅ Hook gọi ở trên cùng, luôn giữ nguyên thứ tự
     const context = useContext(BookingContext);
-    if (!context) return null;
-
-    const { availableServices, selectedService, setSelectedService, addService, removeService } = context;
-
     const [allServices, setAllServices] = useState([]);
-
-    useEffect(() => {
-        axios
-            .get("https://6867d51ad5933161d709fb13.mockapi.io/Service")
-            .then((res) => setAllServices(res.data))
-            .catch((err) => console.error("Lỗi khi tải service:", err));
-    }, []);
 
     const formik = useFormik({
         initialValues: {
@@ -46,16 +36,29 @@ const BookingForm = () => {
     });
 
     useEffect(() => {
-        if (selectedService) {
-            formik.setFieldValue("service", selectedService);
+        axios
+            .get("https://6867d51ad5933161d709fb13.mockapi.io/Service")
+            .then((res) => setAllServices(res.data))
+            .catch((err) => console.error("Lỗi khi tải service:", err));
+    }, []);
+
+    // ✅ Hook chạy sau khi `selectedService` từ context thay đổi
+    useEffect(() => {
+        if (context?.selectedService) {
+            formik.setFieldValue("service", context.selectedService);
         }
-    }, [selectedService]);
+    }, [context?.selectedService]);
+
+    // ✅ Sau khi hook đã gọi đầy đủ, mới kiểm tra context null
+    if (!context) return null;
+
+    const { availableServices, selectedService, setSelectedService, addService, removeService } = context;
 
     const handleSelectChange = (e) => {
         const name = e.target.value;
         const selected = allServices.find((s) => s.name === name);
         if (selected) {
-            addService(selected); // context nên kiểm tra trùng trong addService
+            addService(selected);
             setSelectedService(name);
             formik.setFieldValue("service", name);
         }
@@ -126,7 +129,9 @@ const BookingForm = () => {
                         ))}
                     </div>
 
-                    <div className="form-error">{formik.touched.service && formik.errors.service && <div className="error-item">{formik.errors.service}</div>}</div>
+                    <div className="form-error">
+                        {formik.touched.service && formik.errors.service && <div className="error-item">{formik.errors.service}</div>}
+                    </div>
 
                     <div className="form-row">
                         <textarea name="message" rows="4" placeholder="Nội dung" {...formik.getFieldProps("message")} />
