@@ -1,0 +1,47 @@
+https://docs.google.com/presentation/d/1cse4FnPao8MX_JsRgCnPwRC5wG_Ji5v97KvwYfu5Z10/edit?pli=1
+https://docs.google.com/presentation/d/17P8AJV1ZSo5Vnsd_eV0pH1uTDFbwTnlpfbMmVLr7bTg/edit?pli=1#slide=id.g17905bfb7c7_0_26
+
+https://react-bootstrap-lovat.vercel.app/
+https://react-bootstrap.netlify.app/
+
+chatgptprovip123@gmail.com ChatGPTprovip123@# https://themes.haravan.com/pages/demo?id=head-turner.myharavan.com&pro=head-turner
+
+Cài đặt nodejs 14.17.3
+Cài đặt Extension visual studio code
+Auto Rename Tag
+Javascript (ES6) code snippets
+Prettier
+Reactjs code snippets - rsc
+npm i->npm start (chạy cài node module lại)
+
+"emmet.includeLanguages": {
+        "javascript": "javascriptreact",
+        "vue-html": "html"
+    },
+"emmet.triggerExpansionOnTab": true
+
+
+https://fkhadra.github.io/react-toastify/introduction/
+
+
+https://www.npmjs.com/package/uuid // tự động id
+
+https://formik.org/docs/tutorial#schema-validation-with-yup //báo lỗi
+
+https://swiperjs.com/react // thư viện slice ảnh
+
+https://michalsnik.github.io/aos/ // thư viện animation
+
+https://threejs.org/ // thư viên 3d
+
+https://mockapi.io/projects/6852afc80594059b23ceabc6 API
+
+npm install react-slick slick-carousel
+npm install axios
+npm install formik --save
+npm install yup --save
+npm i react-toastify
+npm install rc-slider
+npm install swiper
+
+  

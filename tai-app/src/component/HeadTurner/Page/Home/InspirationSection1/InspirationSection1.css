@@ -1,0 +1,139 @@
+.inspiration-section {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    min-height: 500px;
+    background-color: var(--color-black);
+}
+
+.inspiration-left,
+.inspiration-right {
+    flex: 0 0 50%;
+    width: 50%;
+}
+
+.inspiration-left {
+    padding: 64px 48px;
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: var(--color-black);
+}
+
+.info {
+    width: 65%;
+}
+
+.subtitleS {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+    position: relative;
+    display: inline-block;
+}
+
+.subtitleS::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-primary);
+    margin-top: 6px;
+}
+
+.title2 {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--color-text-light);
+    max-width: 90%;
+    margin-bottom: 24px;
+}
+
+.see-more-btn {
+    padding: 10px 20px;
+    background: transparent;
+    border: 1px solid var(--color-primary);
+    color: var(--color-white);
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.see-more-btn:hover {
+    background-color: var(--color-primary);
+    color: var(--color-black);
+}
+
+.inspiration-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Responsive dưới 961px */
+@media (max-width: 961px) {
+    .inspiration-section {
+        flex-direction: column;
+    }
+
+    .subtitleS::after {
+        width: 100%;
+    }
+
+    .inspiration-left,
+    .inspiration-right {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+
+    .inspiration-left {
+        align-items: center; /* Giữa nội dung trên màn hình nhỏ */
+        text-align: center;
+        padding: 48px 24px;
+    }
+
+    .info {
+        width: 100%;
+    }
+
+    .description {
+        max-width: 100%;
+    }
+
+    .see-more-btn {
+        margin: 0 auto;
+    }
+}
+
+/* Responsive dưới 594px */
+@media (max-width: 594px) {
+    .title {
+        font-size: 24px;
+    }
+
+    .subtitleS {
+        font-size: 11px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .see-more-btn {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+}

@@ -1,0 +1,64 @@
+.promo-banner {
+    background-image: url("https://theme.hstatic.net/200000893323/1001256440/14/about_us_booking_bg.jpg?v=1587");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+
+    margin: 0 auto;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center; /* Canh giữa theo chiều dọc */
+    justify-content: center; /* Canh giữa theo chiều ngang */
+    flex-direction: column;
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.promo-subtitle {
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    color: #ffffffcc;
+}
+
+.promo-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.highlight {
+    color: #e7b649;
+    font-weight: bold;
+}
+
+.promo-btn {
+    padding: 10px 24px;
+    background-color: #e7b649;
+    color: #000;
+    font-weight: 600;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.promo-btn:hover {
+    background-color: #c79b35;
+}

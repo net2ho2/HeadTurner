@@ -1,0 +1,43 @@
+.static-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 12px;
+    max-width: 320px;
+    font-family: Arial, sans-serif;
+}
+
+.static-card-thumb {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    background-color: #f5f5f5;
+    flex-shrink: 0;
+}
+
+.static-card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.static-card-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 4px 0;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.static-card-price {
+    font-size: 13px;
+    color: #c48b36;
+    margin: 0;
+    text-decoration: underline;
+}

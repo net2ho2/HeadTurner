@@ -1,0 +1,94 @@
+.card-product {
+    background: #f4f4f4;
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    padding: 16px 0;
+    text-align: center;
+    font-family: sans-serif;
+    position: relative;
+    z-index: 98;
+    height: 300px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+.sales {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: rgba(255, 0, 0, 0.8);
+    color: var(--color-white);
+    padding: 2px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 2px;
+    z-index: 1000;
+    text-transform: uppercase;
+    box-shadow: 0 2px 6px var(--color-shadow);
+}
+.product-image {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
+
+.product-info {
+    width: 100%;
+    position: absolute;
+    bottom: -40px;
+    transition: 0.5s;
+}
+
+.card-product:hover .product-info {
+    bottom: 0;
+}
+
+.product-title {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--color-text-dark);
+    margin-bottom: 8px;
+}
+
+.product-price {
+    color: var(--color-primary); /* tương ứng với #f2b63f */
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.product-actions {
+    min-height: 40px;
+    display: flex;
+    background-color: var(--color-black);
+    justify-content: space-around;
+    border-top: 1px solid var(--color-border);
+    padding: 8px;
+}
+
+.icon {
+    font-size: 18px;
+    cursor: pointer;
+    color: var(--color-text-medium);
+    transition: color 0.2s ease;
+}
+
+.icon:hover {
+    color: var(--color-primary);
+}
+/* CardProduct.css */
+
+.original-price {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 10px;
+    margin-left: 8px;
+}
+
+.discounted-price {
+    font-weight: bold;
+    color: var(--color-primary);
+    font-size: 16px;
+}

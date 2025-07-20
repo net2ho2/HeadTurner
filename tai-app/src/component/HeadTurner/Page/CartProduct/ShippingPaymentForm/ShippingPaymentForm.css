@@ -1,0 +1,204 @@
+/* Form container có nền light */
+
+/* Form card (wrapper) */
+.form-wrapper {
+    border-radius: 12px;
+    color: var(--color-text-dark);
+    overflow-y: auto;
+    margin: 0 auto;
+
+    /* box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--color-shadow); */
+}
+
+/* Section Title */
+.form-section-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    border-left: 4px solid var(--color-primary);
+    padding-left: 12px;
+}
+
+/* Nhóm Họ tên + Giới tính */
+.form-name-group {
+    display: flex;
+    gap: 8px;
+}
+
+.form-select-gender {
+    flex: 0 0 10%;
+    min-width: 100px;
+    padding: 12px 14px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: var(--color-white);
+    height: 48px;
+    margin-bottom: 8px;
+    color: var(--color-text-dark);
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23333' stroke-width='1.5' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 12px;
+}
+
+.form-input-name {
+    flex: 1;
+    padding: 12px 14px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: var(--color-white);
+    height: 48px;
+    margin-bottom: 8px;
+    color: var(--color-text-dark);
+    width: 100%;
+}
+
+/* Khối lỗi */
+.form-name-group-with-error {
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.form-error {
+    color: red;
+    font-size: 13px;
+    padding: 0 8px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    display: block;
+    width: 100%;
+}
+
+/* Input thường */
+.form-input {
+    padding: 12px 14px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    font-size: 15px;
+    width: 100%;
+    background-color: var(--color-white);
+    height: 48px;
+    transition: all 0.2s ease;
+    margin-bottom: 8px;
+    color: var(--color-text-dark);
+}
+
+/* Select thường */
+.form-select {
+    padding: 12px 14px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: var(--color-white);
+    height: 48px;
+    margin-bottom: 8px;
+    color: var(--color-text-dark);
+    width: 100%;
+}
+
+/* Button chỉnh sửa */
+.edit-btn {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* Wrapper chứa nút sửa */
+.form-input-wrapper {
+    position: relative;
+    flex: 1;
+}
+
+/* Checkbox */
+.form-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    color: var(--color-text-medium);
+    margin-bottom: 12px;
+}
+
+/* Radio option */
+.form-payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.form-radio-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid var(--color-border);
+    padding: 8px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: var(--color-white);
+    color: var(--color-text-dark);
+}
+
+.form-radio-option:hover {
+    background-color: #f3f4f6;
+    border-color: #cbd5e1;
+}
+
+input[type="radio"] {
+    width: 16px;
+    height: 16px;
+}
+
+.payment-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* Submit Button */
+.form-submit-button {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 14px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    margin-top: 16px;
+}
+
+.form-submit-button:hover {
+    background-color: var(--color-primary-dark);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .form-name-group {
+        flex-direction: column;
+    }
+
+    .form-select-gender,
+    .form-input-name {
+        width: 100%;
+    }
+
+    .edit-btn {
+        right: 8px;
+        font-size: 13px;
+    }
+}

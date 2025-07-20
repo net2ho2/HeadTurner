@@ -1,0 +1,18 @@
+.container-cart-product {
+    width: 70%;
+    margin: 0 auto;
+    padding: 32px;
+    background-color: var(--color-bg-light);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--color-shadow);
+    margin-top: 40px;
+}
+@media (max-width: 961px) {
+    .container-cart-product {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .checkout {
+        order: 2;
+    }
+}

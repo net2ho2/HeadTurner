@@ -1,0 +1,138 @@
+.faq-container {
+    width: 60%;
+    margin: 0 auto;
+    padding: 2rem;
+}
+.faq-container img {
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.faq-title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.faq-desc {
+    margin-bottom: 24px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.faq-list {
+    border-top: 1px solid #ccc;
+}
+
+.faq-item {
+    border-bottom: 1px solid #ccc;
+}
+
+.faq-question {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 16px 12px;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-answer {
+    padding: 0 12px 16px 12px;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.arrow {
+    transition: transform 0.3s ease;
+}
+
+.arrow.open {
+    transform: rotate(180deg);
+}
+
+.faq-answer ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+.faq-contact-form {
+    margin: 0 auto;
+    padding: 32px;
+    width: 50%;
+    background-color: #fdfdfd;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.faq-contact-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+}
+
+.contact-form-row {
+    display: flex;
+    gap: 16px;
+}
+
+.contact-form-row input {
+    flex: 1;
+}
+
+.contact-form textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.recaptcha-note {
+    font-size: 12px;
+    color: #777;
+    line-height: 1.4;
+}
+
+.recaptcha-note a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.submit-button {
+    background-color: #cc9933;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: fit-content;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #b5831e;
+}
+
+.form-error {
+    font-size: 13px;
+    color: red;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

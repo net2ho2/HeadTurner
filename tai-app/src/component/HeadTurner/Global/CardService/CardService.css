@@ -1,0 +1,68 @@
+.card-service {
+    text-align: left;
+    background: white;
+    padding: 10px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.badge-discount {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: #ef4d4d;
+    color: white;
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.card-body {
+    padding: 0 4px;
+}
+
+.service-title {
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.price {
+    margin: 6px 0;
+}
+
+.new-price {
+    color: #c59d5f;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-right: 8px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.service-desc {
+    font-size: 0.875rem;
+    color: #444;
+    margin-top: 8px;
+}
+.Toastify__progress-bar--success {
+    background: #f2b63f !important;
+}

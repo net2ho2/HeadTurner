@@ -1,0 +1,114 @@
+.category-container {
+    border: 1px solid #eee;
+    border-radius: 6px;
+    background: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 14px 16px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    user-select: none;
+}
+
+.category-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.category-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    border-bottom: 1px dashed #ccc;
+    font-size: 13px;
+    color: #333;
+}
+
+.category-list li:last-child {
+    border-bottom: none;
+}
+
+.category-list li a {
+    text-decoration: none;
+    color: #333;
+    flex: 1;
+}
+
+/* Dấu cộng bên phải */
+.plus-icon {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1;
+}
+
+/* Icon dropdown */
+.category-header i {
+    font-size: 12px;
+    color: #333;
+}
+/* ====================== Responsive dưới 961px ====================== */
+@media (max-width: 961px) {
+    .category-container {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 14px;
+    }
+
+    .category-header {
+        font-size: 14px;
+        padding: 10px 14px;
+    }
+
+    .category-list li {
+        padding: 10px 14px;
+    }
+
+    .category-list li a {
+        font-size: 14px;
+    }
+
+    .plus-icon {
+        font-size: 14px;
+    }
+}
+
+/* ====================== Responsive dưới 594px ====================== */
+@media (max-width: 594px) {
+    .category-container {
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+
+    .category-header {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .category-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 12px;
+    }
+
+    .category-list li a {
+        font-size: 13px;
+    }
+
+    .plus-icon {
+        margin-top: 4px;
+        font-size: 13px;
+    }
+}
