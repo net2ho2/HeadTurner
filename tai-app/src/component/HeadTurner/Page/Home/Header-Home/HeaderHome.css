@@ -161,11 +161,11 @@
 }
 
 .carousel-control-prev {
-    left: 15% !important;
+    left: 5% !important;
 }
 
 .carousel-control-next {
-    right: 15% !important;
+    right: 5% !important;
 }
 
 /* ===== INFO BAR ===== */
@@ -188,7 +188,7 @@
 }
 
 .info-boxx {
-    width: 60%;
+    width: 80%;
     display: flex;
     margin: 0 auto;
     justify-content: space-between;
@@ -203,7 +203,7 @@
 
 .info-title {
     color: var(--color-primary);
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: 1.5px;
     margin-bottom: 8px;
     font-weight: bold;
@@ -212,7 +212,7 @@
 
 .info-text {
     color: var(--color-white);
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.6;
     white-space: pre-line;
 }
