@@ -1,13 +1,17 @@
-/* ===== BANNER ===== */
-
+.header-wrapper {
+    width: 100%;
+}
 .baner {
     position: relative;
+    width: 100%;
 }
 
 .carousel-image-wrapper {
     width: 100%;
     margin: 0 auto;
     height: 100vh;
+    padding: 0;
+    margin: 0;
 }
 
 .carousel-image {

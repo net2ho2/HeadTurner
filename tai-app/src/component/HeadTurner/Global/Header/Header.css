@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: space-between;
     position: absolute;
-    width: 80%;
+    width: 90%;
     top: 32px;
     left: 50%;
     transform: translateX(-50%);
@@ -39,11 +39,8 @@
 
 .header.scrolled .logo {
     color: var(--color-black);
-    font-size: 38px;
+    font-size: 32px;
     border: none;
-}
-.header.scrolled .nav-menu li {
-    font-size: 14px;
 }
 
 .header.scrolled .user-info,
@@ -56,7 +53,7 @@
 
 .header.scrolled li,
 .header.scrolled i {
-    font-size: 18px;
+    font-size: 14px;
 }
 
 .logo {
@@ -82,7 +79,9 @@
     transition: 0.3s ease;
     line-height: 24px;
 }
-
+.left-menu {
+    display: flex;
+}
 .nav-menu li:hover {
     color: var(--color-primary);
     transform: scale(1.1);
@@ -93,7 +92,8 @@
 /* ========== ACTION ICONS ========== */
 .actions {
     display: flex;
-    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .actions i {
@@ -120,7 +120,7 @@
     background: var(--color-white);
     padding: 20px;
     border-radius: 6px;
-    width: 500px;
+    width: 400px;
     box-shadow: 0 4px 10px var(--color-shadow);
     text-align: center;
     position: absolute;
@@ -196,7 +196,7 @@
     display: none;
     flex-direction: column;
     justify-content: center;
-    width: 480px;
+    width: 400px;
     margin: 40px auto;
     padding: 24px;
     background-color: var(--color-white);
@@ -292,6 +292,7 @@
     border-radius: 12px;
     font-size: 14px;
     cursor: pointer;
+    margin-left: 12px;
     transition: 0.3s ease;
     color: var(--color-white);
     background-color: var(--color-primary);
@@ -309,11 +310,10 @@
 
 .carousel-image-wrapper {
     position: relative;
-    width: 90%;
+    width: 100%;
     height: 90vh;
     margin: 0 auto;
     overflow: hidden;
-    border-radius: 10px;
 }
 
 .carousel-image {
@@ -512,7 +512,6 @@
 /* ========== BOOKING POPOVER ========== */
 .book-wrapper {
     position: relative;
-    margin-left: 10px;
 }
 
 .book-popup {
@@ -524,15 +523,8 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
     z-index: 1000;
     display: none;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(0, 0, 0, 0.479);
     border-radius: 8px;
-}
-.book-popup {
-    color: black;
-}
-.header.scrolled .book-popup {
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
 }
 
 .book-wrapper:hover .book-popup {
@@ -605,10 +597,7 @@
     background-color: var(--color-white);
     transition: background-color 0.2s ease;
 }
-.suggestion-header {
-    display: flex;
-    width: 80%;
-}
+
 .search-suggestions1 li:hover {
     background-color: var(--color-bg-light);
 }
@@ -620,7 +609,6 @@
     justify-content: space-between;
     gap: 12.8px;
     flex: 1;
-    margin-left: 5px;
     overflow: hidden;
     text-align: left;
     width: 440px;
@@ -657,9 +645,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-.left-menu {
-    display: flex;
-}
+
 /* RIGHT COLUMN */
 .suggestion-price {
     font-weight: 700;
@@ -702,6 +688,102 @@ mark {
     display: table;
     clear: both;
 }
+/* ========== MEDIA QUERIES ========== */
+@media (max-width: 1516px) {
+    .nav-menu {
+        gap: 12px;
+    }
+    .nav-menu li {
+        font-size: 12px;
+    }
+}
+@media (max-width: 1456px) {
+    .nav-menu {
+        gap: 18px;
+    }
+    .nav-menu li {
+        font-size: 14px;
+        padding: 4px;
+    }
+    .header.scrolled .logo {
+        font-size: 18px;
+    }
+}
+@media (max-width: 961px) {
+    .custom-caption {
+        top: 45%;
+    }
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 90%;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+    .icon-menu {
+        display: block;
+    }
+    .logo {
+        font-size: 20px;
+        display: block;
+    }
+
+    .header.scrolled .logos {
+        color: var(--color-black);
+    }
+
+    .header.scrolled {
+        padding: 10px 20px;
+    }
+    .actions {
+        width: 50%;
+        display: flex;
+        gap: 0px;
+        justify-content: flex-end;
+    }
+    .title {
+        font-size: 24px;
+    }
+    .description {
+        font-size: 16px;
+    }
+    .info-bar {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .hero-button {
+        font-size: 14px;
+    }
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 110%;
+        width: 100%;
+        gap: 4px;
+        padding: 5px;
+    }
+    .nav-menu-icon.active {
+        display: flex;
+    }
+
+    .book-button {
+        display: none;
+    }
+    .search-popup,
+    .login .login-toggle {
+        min-width: 300px;
+    }
+}
+
+@media (max-width: 594px) {
+    .logos {
+        font-size: 16px;
+        font-weight: bold;
+        margin-right: 14%;
+    }
+}
+
 /* ========== USER INFO ========== */
 .user-info {
     display: flex;
@@ -745,122 +827,5 @@ mark {
     to {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-/* ========== MEDIA QUERIES ========== */
-@media (max-width: 1516px) {
-    .nav-menu {
-        gap: 12px;
-    }
-    .nav-menu li {
-        font-size: 12px;
-    }
-}
-@media (max-width: 1456px) {
-    .nav-menu {
-        gap: 12px;
-    }
-    .nav-menu li {
-        font-size: 14px;
-        padding: 4px;
-    }
-    .header.scrolled .logo {
-        font-size: 18px;
-    }
-}
-@media (max-width: 961px) {
-    .header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 90%;
-        padding: 10px;
-    }
-
-    .icon-menu {
-        display: block;
-    }
-    .logo {
-        display: none;
-    }
-
-    .logos {
-        display: block;
-        font-size: 20px;
-        font-weight: bold;
-    }
-    .header.scrolled .logos {
-        color: var(--color-black);
-        margin-right: 40%;
-    }
-    .header.scrolled .actions {
-        width: 100%;
-    }
-    .header.scrolled {
-        padding: 20px 20px;
-    }
-    .actions {
-        display: flex;
-        width: 95%;
-        gap: 0px;
-        justify-content: space-between;
-    }
-    .title {
-        font-size: 24px;
-    }
-    .description {
-        font-size: 16px;
-    }
-    .info-bar {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .hero-button {
-        font-size: 14px;
-    }
-    .nav-menu {
-        display: none;
-        position: absolute;
-        top: 110%;
-        width: 100%;
-        gap: 4px;
-        padding: 5px;
-    }
-    .nav-menu-icon.active {
-        display: flex;
-    }
-
-    .book-button {
-        display: none;
-    }
-    .suggestion-left {
-        width: 200px;
-        align-items: center;
-    }
-    .suggestion-right {
-        display: none;
-    }
-    .search-popup {
-        transform: translateX(-50%);
-        width: 350px;
-    }
-    .login .login-toggle {
-        width: 300px;
-        transform: translateX(-65%);
-    }
-}
-
-@media (max-width: 594px) {
-    .logos {
-        font-size: 16px;
-        font-weight: bold;
-        margin-right: 14%;
-    }
-    .search-popup {
-        width: 300px;
-    }
-    .login .login-toggle {
-        width: 300px;
     }
 }

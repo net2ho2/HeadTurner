@@ -23,7 +23,7 @@
     content: "";
     display: block;
     height: 2px;
-    width: 40px;
+    width: 100%;
     background-color: var(--color-primary, #cda265);
     margin: 8px auto 0;
 }

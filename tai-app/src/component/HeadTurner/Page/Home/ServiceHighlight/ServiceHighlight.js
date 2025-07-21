@@ -33,13 +33,17 @@ const ServiceHighlight = () => {
         <section className="service-section">
             <div className="text-center">
                 <p className="service-subtitle">HEAD TURNER</p>
-                <h2 className="service-title">
-                    DỊCH VỤ <span>CẮT TÓC</span> NAM CAO CẤP
-                </h2>
+                <h2 className="service-title">DỊCH VỤ CẮT TÓC NAM CAO CẤP</h2>
             </div>
             <div className="service-grid">
                 {services.map((item, index) => (
-                    <div className={`service-card ${index % 2 === 1 ? "lower" : ""}`} key={index} style={{ backgroundImage: `url(${item.image})` }}>
+                    <div
+                        className={`service-card ${
+                            index % 2 === 1 ? "lower" : ""
+                        }`}
+                        key={index}
+                        style={{ backgroundImage: `url(${item.image})` }}
+                    >
                         <div className="overlay" />
                         <div className="card-content">
                             <img src={item.icon} alt={item.title} />

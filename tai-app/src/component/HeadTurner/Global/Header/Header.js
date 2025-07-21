@@ -115,11 +115,6 @@ const Header = () => {
     const handleBookingClick = () =>
         (window.location.href = "/#booking-section");
 
-    // ✨ Thêm hàm này để tắt menu khi chuyển trang
-    const handleLinkClick = () => {
-        setToggleMenu(false);
-    };
-
     const handleLogin = async (e) => {
         e.preventDefault();
         const email = e.target.email.value.trim();
@@ -197,302 +192,235 @@ const Header = () => {
             </ul>
 
             <div className="actions">
-                <Link to="/" className="logos">
-                    HEAD TURNER
-                </Link>
-
-                <div className="left-menu">
-                    {/* Search */}
-                    <div className="search" ref={searchRef}>
-                        <i
-                            className="fa-solid fa-magnifying-glass"
-                            onClick={() => handleToggle("search")}
-                        ></i>
-                        <div
-                            className={`search-popup ${
-                                toggleSearch ? "active" : ""
-                            }`}
-                        >
-                            <h4 className="search-title">TÌM KIẾM</h4>
-                            <div className="search-box">
-                                <input
-                                    type="text"
-                                    placeholder="Tìm kiếm sản phẩm..."
-                                    value={searchTerm}
-                                    onChange={handleChangeSearchTerm}
-                                    onKeyDown={(e) =>
-                                        e.key === "Enter" && handleSearch()
-                                    }
-                                />
-                                <button
-                                    className="search-btn2"
-                                    onClick={handleSearch}
-                                >
-                                    <i className="fa fa-search"></i>
-                                </button>
-                            </div>
-                            {suggestions.length > 0 && (
-                                <ul className="search-suggestions1">
-                                    {suggestions.map((item) => (
-                                        <li key={item.id}>
-                                            <Link
-                                                to={`/detail/${item.id}`}
-                                                onClick={() => {
-                                                    setToggleSearch(false);
-                                                    setSuggestions([]);
-                                                    setSearchTerm("");
-                                                }}
-                                            >
-                                                <div className="suggestion-header">
-                                                    <img
-                                                        src={item.image}
-                                                        alt={item.name}
-                                                        className="suggestion-img"
-                                                    />
-                                                    <div className="suggestion-left">
-                                                        <div className="suggestion-text">
-                                                            <div className="suggestion-name">
-                                                                {highlightMatch(
-                                                                    item.name,
-                                                                    searchTerm
-                                                                )}
-                                                            </div>
-                                                            {item.description && (
-                                                                <div className="suggestion-desc">
-                                                                    {highlightMatch(
-                                                                        item.description,
-                                                                        searchTerm
-                                                                    )}
-                                                                </div>
-                                                            )}
-                                                        </div>
-                                                    </div>
-                                                    <div className="suggestion-right">
-                                                        <div className="suggestion-price">
-                                                            {Number(
-                                                                item.price
-                                                            ).toLocaleString(
-                                                                "vi-VN"
-                                                            )}{" "}
-                                                            ₫
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            )}
-                        </div>
-                    </div>
-                    {/* Login */}
-                    {user ? (
-                        <div className="user-info">
-                            Xin chào, <strong>{user.firstName}</strong>!
+                {/* Search */}
+                <div className="search" ref={searchRef}>
+                    <i
+                        className="fa-solid fa-magnifying-glass"
+                        onClick={() => handleToggle("search")}
+                    ></i>
+                    <div
+                        className={`search-popup ${
+                            toggleSearch ? "active" : ""
+                        }`}
+                    >
+                        <h4 className="search-title">TÌM KIẾM</h4>
+                        <div className="search-box">
+                            <input
+                                type="text"
+                                placeholder="Tìm kiếm sản phẩm..."
+                                value={searchTerm}
+                                onChange={handleChangeSearchTerm}
+                                onKeyDown={(e) =>
+                                    e.key === "Enter" && handleSearch()
+                                }
+                            />
                             <button
-                                className="logout-btn"
-                                onClick={handleLogout}
+                                className="search-btn2"
+                                onClick={handleSearch}
                             >
-                                Đăng xuất
+                                <i className="fa fa-search"></i>
                             </button>
                         </div>
-                    ) : (
-                        <div className="login" ref={loginRef}>
-                            <div
-                                className={`login-toggle ${
-                                    toggleLogin ? "active" : ""
-                                }`}
-                            >
-                                <h2 className="login-title">
-                                    ĐĂNG NHẬP TÀI KHOẢN
-                                </h2>
-                                <form
-                                    className="login-form"
-                                    onSubmit={handleLogin}
-                                >
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        placeholder="Email"
-                                        required
-                                    />
-                                    <input
-                                        type="password"
-                                        name="password"
-                                        placeholder="Mật khẩu"
-                                        required
-                                    />
-                                    <button type="submit">ĐĂNG NHẬP</button>
-                                </form>
-                            </div>
-                            <i
-                                className="fas fa-user"
-                                onClick={() => handleToggle("login")}
-                            ></i>
-                        </div>
-                    )}
 
-                    {/* Cart */}
-                    <div
-                        className="cart-left"
-                        onClick={() => handleToggle("cart")}
-                        ref={cartRef}
-                    >
-                        <i className="fas fa-shopping-cart"></i>
-                        <div className="cart-count">{cartItems.length}</div>
-                        <CartPopup
-                            visible={showCart}
-                            onClose={() => setShowCart(false)}
-                        />
-                    </div>
-
-                    {/* Booking */}
-                    <div className="book-wrapper">
-                        <button
-                            className="book-button"
-                            onClick={handleBookingClick}
-                        >
-                            ĐẶT LỊCH
-                        </button>
-                        <div className="book-popup">
-                            <p>Dịch vụ đã đặt:</p>
-                            {availableServices.length === 0 ? (
-                                <p>Chưa có dịch vụ nào.</p>
-                            ) : (
-                                <div className="booked-services1">
-                                    {availableServices.map((s, i) => (
-                                        <div key={i} className="booked-item1">
-                                            <img
-                                                src={s.image}
-                                                alt={s.name}
-                                                className="service-img"
-                                            />
-                                            <div className="service-info">
-                                                <div className="service-name">
-                                                    {s.name}
+                        {suggestions.length > 0 && (
+                            <ul className="search-suggestions1">
+                                {suggestions.map((item) => (
+                                    <li key={item.id}>
+                                        <Link
+                                            to={`/detail/${item.id}`}
+                                            onClick={() => {
+                                                setToggleSearch(false);
+                                                setSuggestions([]);
+                                                setSearchTerm("");
+                                            }}
+                                        >
+                                            <div className="suggestion-left">
+                                                <img
+                                                    src={item.image}
+                                                    alt={item.name}
+                                                    className="suggestion-img"
+                                                />
+                                                <div className="suggestion-text">
+                                                    <div className="suggestion-name">
+                                                        {highlightMatch(
+                                                            item.name,
+                                                            searchTerm
+                                                        )}
+                                                    </div>
+                                                    {item.description && (
+                                                        <div className="suggestion-desc">
+                                                            {highlightMatch(
+                                                                item.description,
+                                                                searchTerm
+                                                            )}
+                                                        </div>
+                                                    )}
                                                 </div>
-                                                <div className="service-price">
+                                                <div className="suggestion-price">
                                                     {Number(
-                                                        s.price
+                                                        item.price
                                                     ).toLocaleString(
                                                         "vi-VN"
                                                     )}{" "}
                                                     ₫
                                                 </div>
                                             </div>
-                                            <button
-                                                className="remove-btn"
-                                                onClick={() =>
-                                                    removeService(s.name)
-                                                }
-                                            >
-                                                ×
-                                            </button>
-                                        </div>
-                                    ))}
-                                </div>
-                            )}
-                        </div>
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
                     </div>
+                </div>
 
-                    {/* Mobile Menu */}
-                    <div className="icon-menu" ref={menuRef}>
-                        <i
-                            className="fa-solid fa-bars"
-                            onClick={() => handleToggle("menu")}
-                        ></i>
-                        <ul
-                            className={`nav-menu-icon ${
-                                toggleMenu ? "active" : ""
+                {/* Login */}
+                {user ? (
+                    <div className="user-info">
+                        Xin chào, <strong>{user.firstName}</strong>!
+                        <button className="logout-btn" onClick={handleLogout}>
+                            Đăng xuất
+                        </button>
+                    </div>
+                ) : (
+                    <div className="login" ref={loginRef}>
+                        <div
+                            className={`login-toggle ${
+                                toggleLogin ? "active" : ""
                             }`}
                         >
-                            <li>
-                                <Link
-                                    to="/"
-                                    onClick={() => {
-                                        scrollToTop();
-                                        handleLinkClick();
-                                    }}
-                                >
-                                    Trang chủ
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    to="/about"
-                                    onClick={() => {
-                                        scrollToTop();
-                                        handleLinkClick();
-                                    }}
-                                >
-                                    Giới thiệu
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    to="/services"
-                                    onClick={() => {
-                                        scrollToTop();
-                                        handleLinkClick();
-                                    }}
-                                >
-                                    Dịch vụ
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    to="/products"
-                                    onClick={() => {
-                                        scrollToTop();
-                                        handleLinkClick();
-                                    }}
-                                >
-                                    Sản phẩm
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    to="/hair-care"
-                                    onClick={() => {
-                                        scrollToTop();
-                                        handleLinkClick();
-                                    }}
-                                >
-                                    Chăm sóc tóc
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    to="/contact"
-                                    onClick={() => {
-                                        scrollToTop();
-                                        handleLinkClick();
-                                    }}
-                                >
-                                    Liên hệ
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    to="/policy"
-                                    onClick={() => {
-                                        scrollToTop();
-                                        handleLinkClick();
-                                    }}
-                                >
-                                    Quy định
-                                </Link>
-                            </li>
-                            <li
-                                onClick={() => {
-                                    handleBookingClick();
-                                    handleLinkClick();
-                                }}
-                            >
-                                Đặt Lịch
-                            </li>
-                        </ul>
+                            <h2 className="login-title">ĐĂNG NHẬP TÀI KHOẢN</h2>
+                            <form className="login-form" onSubmit={handleLogin}>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder="Email"
+                                    required
+                                />
+                                <input
+                                    type="password"
+                                    name="password"
+                                    placeholder="Mật khẩu"
+                                    required
+                                />
+                                <button type="submit">ĐĂNG NHẬP</button>
+                            </form>
+                        </div>
+                        <i
+                            className="fas fa-user"
+                            onClick={() => handleToggle("login")}
+                        ></i>
                     </div>
+                )}
+
+                {/* Cart */}
+                <div
+                    className="cart-left"
+                    onClick={() => handleToggle("cart")}
+                    ref={cartRef}
+                >
+                    <i className="fas fa-shopping-cart"></i>
+                    <div className="cart-count">{cartItems.length}</div>
+                    <CartPopup
+                        visible={showCart}
+                        onClose={() => setShowCart(false)}
+                    />
+                </div>
+
+                {/* Booking */}
+                <div className="book-wrapper">
+                    <button
+                        className="book-button"
+                        onClick={handleBookingClick}
+                    >
+                        ĐẶT LỊCH
+                    </button>
+                    <div className="book-popup">
+                        <p>Dịch vụ đã đặt:</p>
+                        {availableServices.length === 0 ? (
+                            <p>Chưa có dịch vụ nào.</p>
+                        ) : (
+                            <div className="booked-services1">
+                                {availableServices.map((s, i) => (
+                                    <div key={i} className="booked-item1">
+                                        <img
+                                            src={s.image}
+                                            alt={s.name}
+                                            className="service-img"
+                                        />
+                                        <div className="service-info">
+                                            <div className="service-name">
+                                                {s.name}
+                                            </div>
+                                            <div className="service-price">
+                                                {Number(s.price).toLocaleString(
+                                                    "vi-VN"
+                                                )}{" "}
+                                                ₫
+                                            </div>
+                                        </div>
+                                        <button
+                                            className="remove-btn"
+                                            onClick={() =>
+                                                removeService(s.name)
+                                            }
+                                        >
+                                            ×
+                                        </button>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+                </div>
+
+                {/* Mobile Menu */}
+                <div className="icon-menu" ref={menuRef}>
+                    <i
+                        className="fa-solid fa-bars"
+                        onClick={() => handleToggle("menu")}
+                    ></i>
+                    <ul
+                        className={`nav-menu-icon ${
+                            toggleMenu ? "active" : ""
+                        }`}
+                    >
+                        <li>
+                            <Link to="/" onClick={scrollToTop}>
+                                Trang chủ
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/about" onClick={scrollToTop}>
+                                Giới thiệu
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/services" onClick={scrollToTop}>
+                                Dịch vụ
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/products" onClick={scrollToTop}>
+                                Sản phẩm
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/hair-care" onClick={scrollToTop}>
+                                Chăm sóc tóc
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/contact" onClick={scrollToTop}>
+                                Liên hệ
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/policy" onClick={scrollToTop}>
+                                Quy định
+                            </Link>
+                        </li>
+                        <li onClick={handleBookingClick}>Đặt Lịch</li>
+                    </ul>
                 </div>
             </div>
         </header>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import "./TeamMember.css";
 
 const TeamMember = () => {
@@ -12,23 +13,38 @@ const TeamMember = () => {
     }, []);
 
     return (
-        <section className="team-section">
-            <p className="team-subtitle">NHÂN VIÊN HEAD TURNER</p>
-            <h2 className="team-title">NHỮNG NGHỆ SĨ LÀM TÓC</h2>
+        <section className="team-section py-5 text-center">
+            <div>
+                <p className="team-subtitle text-uppercase text-muted mb-2">
+                    Nhân viên Head Turner
+                </p>
+                <h2 className="team-title fw-bold mb-4">
+                    Những nghệ sĩ làm tóc
+                </h2>
 
-            <div className="team-grid">
-                {teamMembers.slice(0, 4).map((member) => (
-                    <div className="team-card" key={member.id}>
-                        <div className="team-image">
-                            <img src={member.imageUrl} alt={member.name} />
-                            <button className="plus-btn">+</button>
-                        </div>
-                        <div className="team-info">
-                            <h4>{member.name.toUpperCase()}</h4>
-                            <p>{member.role}</p>
-                        </div>
-                    </div>
-                ))}
+                <Row className="g-4">
+                    {teamMembers.slice(0, 4).map((member) => (
+                        <Col key={member.id} xs={6} md={3}>
+                            <div className="team-card bg-white rounded shadow-sm p-3 h-100">
+                                <div className="team-image position-relative mb-3">
+                                    <img
+                                        src={member.imageUrl}
+                                        alt={member.name}
+                                        className="img-fluid rounded"
+                                    />
+                                </div>
+                                <div className="team-info">
+                                    <h5 className="fw-bold">
+                                        {member.name.toUpperCase()}
+                                    </h5>
+                                    <p className="text-muted mb-0">
+                                        {member.role}
+                                    </p>
+                                </div>
+                            </div>
+                        </Col>
+                    ))}
+                </Row>
             </div>
         </section>
     );
