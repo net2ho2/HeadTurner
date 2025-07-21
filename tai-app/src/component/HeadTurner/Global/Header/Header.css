@@ -772,7 +772,7 @@ mark {
     }
     .search-popup,
     .login .login-toggle {
-        min-width: 300px;
+        width: 250px;
     }
 }
 
@@ -785,7 +785,7 @@ mark {
 }
 .search-popup,
 .login .login-toggle {
-    min-width: 200px;
+    width: 250px;
 }
 /* ========== USER INFO ========== */
 .user-info {
