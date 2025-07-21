@@ -783,7 +783,10 @@ mark {
         margin-right: 14%;
     }
 }
-
+.search-popup,
+.login .login-toggle {
+    min-width: 200px;
+}
 /* ========== USER INFO ========== */
 .user-info {
     display: flex;
